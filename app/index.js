@@ -10,6 +10,7 @@ import Portfolio  from "./components/section/portfolio";
 import Contact    from "./components/section/contact";
 
 const router = <Router history={ browserHistory } >
+
   <Route path="/" component={ App }>
     <IndexRoute component={ Home } />
     <Route path="about" component={About} />
