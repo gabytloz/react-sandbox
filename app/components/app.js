@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "./navigation";
+import Navigation from "./modules/navigation";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ export default class App extends React.Component {
       { React.cloneElement( this.props.children, this.cleanProps() ) }
 
       <footer>
-        <p>Gabysoft™, me la pelan todos</p>
+        <p>powered by Vagui © 2010 - 2016</p>
       </footer>
     </div>
   }

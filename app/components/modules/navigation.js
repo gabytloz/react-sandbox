@@ -10,6 +10,8 @@ export default class Navigation extends React.Component {
       return <ul>
           <li><Link to="/" activeClassName="active" onlyActiveOnIndex >Home</Link></li>
           <li><Link to="/about" activeClassName="active">About</Link></li>
+          <li><Link to="/services" activeClassName="active">Services</Link></li>
+          <li><Link to="/portfolio" activeClassName="active">Portfolio</Link></li>
           <li><Link to="/contact" activeClassName="active">Contact</Link></li>
         </ul>
     }
