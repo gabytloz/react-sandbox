@@ -1,16 +1,8 @@
 /* ****************** FOOTER **************** */
 
 footer{
-  background: $black;
-  color: $white;
-  font: 10px Arial, sans-serif;
-  margin: 90px 0 0;
-  padding: 30px 0;
+  background: $light-gray;
+  font-size: 13px;
+  padding: 0 0 20px;
   text-align: center;
-
-  p{
-    display: inline-block;
-    margin: 0 15px 0 0;
-    vertical-align: middle;
-  }
 }

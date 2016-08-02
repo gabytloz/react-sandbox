@@ -1,33 +1,14 @@
 /* ***************** MIXINS ***************** */
 // Included in ./base/_setup
 
+body, html{
+  margin: 0;
+  padding: 0;
+}
+
 body{
-  background: $gray-lighter;
+  background: #fcfcfc url(../img/dirt-pattern.jpg) repeat;
   color: $gray;
-  font: 15px Geneva, Verdana, sans-serif;
-  letter-spacing: 0.04em;
-  line-height: 1.4em;
-  padding: 70px 0 0;
-  position: relative;
-
-  @include transition(padding, .3s);
-
-  &.modal{
-    height: 100%;
-    overflow-y: hidden;
-  }
-}
-
-h1, h2, h3{
-  color: #9e3a3c;
-   @extend %raleway-semibold;
-  text-transform: uppercase;
-}
-
-sup{
-  display: inline-block;
-  font-size: 10px;
-  font-weight: bold;
-  line-height: 1em;
-  vertical-align: top;
+  @extend %chivo;
+  font-size: 13px;
 }

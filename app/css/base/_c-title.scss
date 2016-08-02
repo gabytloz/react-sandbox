@@ -1,23 +1,20 @@
 /* ****************** TITLE ***************** */
 // Included in ./base/_commons
-
-h2.decorTitle, h3.decorTitle{
-  border-left: 15px solid $green-darker;
-  margin: 0 0 15px;
-  padding: 0 0 0 15px;
-  position: relative;
+h1, h2, h3, h4{
+  @extend %chivo;
+  line-height: 1em;
 }
 
-h2.decorTitle.grey, h3.decorTitle.grey{
-  color: $gray;
-  text-transform: none;
-}
+  a, a:link{
+    color: black;
+    font-weight: normal;
 
-h2.decorTitle.green, h3.decorTitle.green{
-  border-left-color: $yellow;
-  color: $green;
-}
+    &:hover{
+      color: lighten(black,20);
+    }
+  }
 
-h2.normalCase, h3.normalCase{
-  text-transform: none;
+h2{
+  font-size: 102px;
+  text-transform: uppercase;
 }

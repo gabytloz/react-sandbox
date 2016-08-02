@@ -1,27 +1,7 @@
 /* ****************** LIST ****************** */
 // Included in ./base/_commons
 
-.bulletList{
-  color: #444444;
+.unstyledList{
   list-style-type: none;
-  margin: 25px 0 35px;
-  padding: 0;
-
-  li{
-    margin: 0 0 13px;
-    padding: 0 0 0 15px;
-    position: relative;
-
-    &:before{
-      background: #ca1d00;
-      @include border-radius(50px);
-      content: " ";
-      display: block;
-      height: 8px;
-      left: 0;
-      position: absolute;
-      top: 6px;
-      width: 8px;
-    }
-  }
+  padding: 0
 }
