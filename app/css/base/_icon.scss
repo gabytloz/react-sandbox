@@ -1,0 +1,196 @@
+/* ****************** ICONS ***************** */
+// Included in ./base/_setup
+
+
+// Create sprites
+
+//@import "~general/*.png";
+//@include all-general-sprites;
+//$general-icons: sprite-map("general/*.png", $layout: smart)
+
+//$general-icons: sprite();
+
+//@import "../img/general2x/*.png"
+//@include all-general2x-sprites
+//$general2x-icons: sprite-map("general2x/*.png", $layout: smart)
+
+
+// Sprite and icons extendable classes
+
+.hasIcon{
+  position: relative;
+}
+
+.isGraphic{
+  display: block;
+  line-height: 5000em;
+  overflow: hidden;
+}
+
+.isDecoration{
+  @extend .isGraphic;
+  content: " ";
+  position: absolute;
+}
+
+.isStaticDecoration{
+  @extend .isDecoration;
+  position: static;
+}
+
+.isSocialIcon{
+  font-size: 10px;
+}
+
+
+// Classes for icon-moon font
+[class^="icon-"], [class*=" icon-"] {
+    // use !important to prevent issues with browser extensions that change fonts
+    color: $red;
+    font-family: 'icomoon-mdk' !important;
+    font-size: 20px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mdk-phone:before {
+    content: "\e900";
+}
+.icon-mdk-location:before {
+    content: "\e901";
+}
+.icon-mdk-exclamation:before {
+    content: "\e902";
+}
+.icon-mdk-greater-than:before {
+    content: "\e903";
+}
+.icon-mdk-plus:before {
+    content: "\e904";
+}
+.icon-mdk-minus:before {
+    content: "\e905";
+}
+.icon-mdk-arrow-up:before {
+    content: "\e906";
+}
+.icon-mdk-arrow-down:before {
+    content: "\e907";
+}
+.icon-mdk-arrow-left:before {
+    content: "\e908";
+}
+.icon-mdk-arrow-right:before {
+    content: "\e909";
+}
+.icon-mdk-facebook:before {
+    @extend .isSocialIcon;
+    content: "\e90a";
+}
+.icon-mdk-facebook-rectangle:before {
+    content: "\e90b";
+}
+.icon-mdk-info:before {
+    content: "\e90c";
+}
+.icon-mdk-close:before {
+    content: "\e90d";
+}
+
+/* -------- Graphics ------------------- */
+/*
+.logo{
+  @extend .isGraphic;
+  background: sprite($general-icons, logo);
+  @include sprite-dimensions($general-icons, logo);
+  @include sprite-at2x($general-icons, $general2x-icons);
+}
+
+.logoSmall{
+  @extend .isGraphic;
+  background: sprite($general-icons, logo-small);
+  @include sprite-dimensions($general-icons, logo-small);
+  @include sprite-at2x($general-icons, $general2x-icons);
+}
+
+*/
+
+.img{
+  @extend .isGraphic;
+  background: url('../img/sprite-general.png') 0 0 no-repeat;
+  margin: 30px auto 10px;
+  max-width: 100%;
+}
+
+/* -------- Gallery (tmp) -------------- */
+
+.close, .btn-face, .info-icon, .btn-face .icon {
+  background: url('../img/sprite-galeria.png') 0 0 no-repeat
+}
+
+.close{
+  background-position: 0 0;
+  height: 29px;
+  left: 50%;
+  margin: 0 0 0 -13px;
+  opacity: 1;
+  position: absolute;
+  top: 13px;
+  width: 26px;
+  &:hover, &:active{
+    opacity: 1;
+  }
+}
+
+.prev-arrow, .next-arrow{
+  background: transparent;
+  height: 36px;
+  left: 50%;
+  margin: 0 0 0 -17px;
+  position: absolute;
+  top: 9px;
+  width: 35px;
+}
+
+.btn-face{
+  background: #4d70aa;
+  display: block;
+  height: 58px;
+  line-height: 5000em;
+  overflow: hidden;
+  position: relative;
+  @include transition(0.4s);
+  width: 58px;
+
+  &:hover, &:active{
+    background: darken(#4d70aa, 12);
+  }
+
+  .icon{
+    background-position: -103px 0;
+    display: block;
+    height: 38px;
+    left: 50%;
+    margin: 0 0 0 -10px;
+    position: absolute;
+    top: 9px;
+    width: 20px;
+  }
+}
+
+.info-icon{
+  background-position: -59px 0;
+  display: block;
+  height: 37px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 37px;
+}

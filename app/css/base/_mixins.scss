@@ -1,0 +1,92 @@
+/* ***************** MIXINS ***************** */
+// Included in ./base/_setup
+
+/* ------- Retina support for sprites ------- */
+
+// A modification of retina.sass' helper mixin.
+// It changes the background-image of a normal sprite-map to a retina version
+// and it adds a the normal sprite-map's dimension to the retina background for proper display
+
+// Original code by Nathan Crank (nathancrank.com)
+// modified by Vagui http://www.vagui.com/
+
+@mixin sprite-at2x($original, $retina){
+  @media all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5){
+    background-image: sprite-url($retina);
+    background-size: image-width(sprite-path($original)) image-height(sprite-path($original));
+  }
+}
+
+/* ---------- Media queries  ------------------- */
+
+//variables defined in ./_variables
+
+@mixin mobile-xs{
+  @media (max-width: #{$mobile-xs-width - 1px}){
+    @content
+  }
+}
+
+@mixin mobile-sm{
+  @media (max-width: #{$mobile-width - 1px}){
+    @content
+  }
+}
+
+@mixin mobile{
+  @media (max-width: #{$tablet-width - 1px}){
+    @content
+  }
+}
+
+@mixin tablet{
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}){
+    @content
+  }
+}
+
+@mixin desktop{
+  @media (min-width: #{$desktop-width}){
+    @content
+  }
+}
+
+@mixin large-screen{
+  @media (min-width: #{$mobile-width + 1}){
+    @content
+  }
+}
+
+@mixin larger-screen{
+  @media (min-width: #{$tablet-width}){
+    @content
+  }
+}
+
+
+/* ---------- Animation  ------------------- */
+
+
+@mixin animation ($stuff ) {
+  -webkit-animation: $stuff;
+  -moz-animation: $stuff;
+  -ms-animation: $stuff;
+  animation: $stuff;
+}
+
+//Keyframes
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

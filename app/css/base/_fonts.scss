@@ -1,0 +1,82 @@
+/* ****************** FONTFACE ************** */
+// Included in ./base/_setup
+
+@font-face{
+  font-family: 'raleway-regular';
+  src: url('raleway-regular.eot');
+  src: url('raleway-regular.eot?#iefix') format('embedded-opentype'), url('raleway-regular.woff') format('woff'), url('raleway-regular.ttf') format('truetype'), url('raleway-regular.svg#raleway-regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+@font-face{
+  font-family: 'raleway-semibold';
+  src: url('raleway-semibold.eot');
+  src: url('raleway-semibold.eot?#iefix') format('embedded-opentype'), url('raleway-semibold.woff') format('woff'), url('raleway-semibold.ttf') format('truetype'), url('raleway-semibold.svg#raleway-semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+@font-face{
+  font-family: 'raleway-thin';
+  src: url('raleway-thin.eot');
+  src: url('raleway-thin.eot?#iefix') format('embedded-opentype'), url('raleway-thin.woff') format('woff'), url('raleway-thin.ttf') format('truetype'), url('raleway-thin.svg#raleway-thin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+@font-face{
+  font-family: 'ptsans-bold';
+  src: url('ptsans-bold.eot');
+  src: url('ptsans-bold.eot?#iefix') format('embedded-opentype'), url('ptsans-bold.woff') format('woff'), url('ptsans-bold.ttf') format('truetype'), url('ptsans-bold.svg#ptsans-bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+@font-face{
+  font-family: 'icomoon-mdk';
+  src: url('icomoon-mdk.eot');
+  src: url('icomoon-mdk.eot?#iefix') format('embedded-opentype'), url('icomoon-mdk.woff') format('woff'), url('icomoon-mdk.ttf') format('truetype'), url('icomoon-mdk.svg#icomoon-mdk') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+%raleway{
+  font-family: 'raleway-regular', Cambria, Times New Roman, serif;
+  font-weight: normal;
+}
+
+%raleway-semibold{
+  font-family: 'raleway-semibold', Cambria, Times New Roman, serif;
+  font-weight: normal;
+}
+
+%raleway-thin{
+  font-family: 'raleway-thin', Cambria, Times New Roman, serif;
+  font-weight: normal;
+}
+
+%ptsans-bold{
+  font-family: 'ptsans-bold', Verdana, sans-serif;
+  font-weight: normal;
+}

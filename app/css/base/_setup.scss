@@ -1,0 +1,28 @@
+/* ****************** SETUP ***************** */
+// Included in ./application
+
+@import "~compass-sass-mixins/lib/compass";
+
+/* ----------- Variables -------------------- */
+
+@import "./base/variables.scss";
+
+/* ----------- Mixins ----------------------- */
+
+@import "./base/mixins.scss";
+
+/* -------------- Fonts --------------------- */
+
+@import "./base/fonts.scss";
+
+/* ------------ Iconography ----------------- */
+
+@import "./base/icon.scss";
+
+/* ----------- HTML tags -------------------- */
+
+@import "./base/html-tags.scss";
+
+/* ------------ Common styles --------------- */
+
+@import "./base/commons.scss";

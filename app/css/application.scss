@@ -1,0 +1,55 @@
+@import "./base/setup.scss";
+
+/* ********* INCLUDE BASE ******************* */
+
+/* -------------- Header -------------------- */
+
+@import "./layout/l-header.scss";
+
+/* -------------- Footer -------------------- */
+
+@import "./layout/l-footer.scss";
+
+/* -------------- Other --------------------- */
+
+@import "./layout/l-banner.scss";
+
+/* ********* INCLUDE LAYOUT ***************** */
+
+.container{
+  max-width: 1060px;
+}
+
+.col-sm-6{
+	.wrapp{
+    margin: 0 auto;
+    width: 87%;
+	}
+}
+span.container{
+  display: block;
+}
+
+#go-to-contact{
+  @include mobile-sm{
+    display: none;
+  }
+}
+
+/* ********* INCLUDE MODULES **************** */
+
+@import "./module/m-carouselbanner.scss";
+@import "./module/m-decorationredline.scss";
+@import "./module/m-hassidelink.scss";
+@import "./module/m-specialoffer.scss";
+
+
+/* ********* INCLUDE SECTIONS *************** */
+
+@import "./section/home.scss";
+@import "./section/gallery.scss";
+@import "./section/taekwondo.scss";
+@import "./section/about-us.scss";
+@import "./section/contact.scss";
+
+@import "./section/error404.scss";

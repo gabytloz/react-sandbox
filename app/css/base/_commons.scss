@@ -1,0 +1,78 @@
+/* ****************** COMMONS *************** */
+// Included in ./base/_setup
+
+/* -------------- Title --------------------- */
+
+@import "./base/c-title.scss";
+
+/* -------------- Button -------------------- */
+
+@import "./base/c-button.scss";
+
+/* -------------- List ---------------------- */
+
+@import "./base/c-list.scss";
+
+/* -------------- Image --------------------- */
+
+@import "./base/c-image.scss";
+
+/* -------------- Social --------------------- */
+
+@import "./base/c-social.scss";
+
+/* -------------- Other --------------------- */
+
+.heightControl{
+  height: 100%;
+  display: inline-block;
+  margin-right: -1px;
+  vertical-align: middle;
+  width: 1px;
+}
+.heightControl + div, .heightControl + .isVerticallyAligned{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.tel, .map_link{
+  color: #333;
+  font: 20px Verdana, sans-serif;
+  line-height: 1em;
+  padding: 5px 0 5px 35px;
+
+  .icon{
+    opacity: 1;
+
+    &:hover, &:active{
+      color: lighten(#333, 10);
+      text-decoration: none;
+
+      .icon{
+        opacity: .7;
+      }
+    }
+  }
+}
+
+.map_link{
+  font-size: 17px;
+}
+
+.error{
+  color: #8e0016;
+  font-size: 12px;
+}
+
+p.big{
+  color: #545353;
+  @extend %raleway-semibold;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  line-height: 1.2em;
+}
+
+.unstyledList{
+  list-style-type: none;
+  padding: 0
+}

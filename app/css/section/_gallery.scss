@@ -1,0 +1,440 @@
+/* ****************** GALLERY ************** */
+
+#banner.galeria{
+  background-image: url( "../img/banner/gallery_xs.jpg" );
+  margin-bottom: 50px;
+
+  @include large-screen{
+    background-image: url( "../img/banner/gallery.jpg" );
+    background-size: auto;
+  }
+}
+
+.galleryThumb{
+  display: inline-block;
+  margin: 0 0 40px;
+  overflow: hidden;
+  max-width: 100%;
+  position: relative;
+
+  &:before{
+    @extend .isDecoration;
+    background: rgba(0,114,59, 0);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    @include transition(background, .4s);
+    width: 100%;
+    z-index: 5;
+  }
+
+  &:hover, &:focus, &:active{
+    cursor: pointer;
+
+    &:before{
+      background: rgba(0,114,59,.72);
+    }
+    p{
+      top: 20px;
+    }
+  }
+
+  p{
+    background: #171717;
+    color: white;
+    left: 0;
+    max-height: 180px;
+    overflow: hidden;
+    padding: 20px 15px;
+    position: absolute;
+    text-align: left;
+    text-transform: uppercase;
+    @include transition(top, .4s);
+    top: 0;
+    width: 100%;
+    z-index: 6;
+  }
+  img{
+    background: darken(#dedede, 5);
+    min-height: 222px;
+    width: auto;
+  }
+
+}
+
+.active{
+  .galleryThumb{
+    p{
+      top: 20px;
+    }
+    &:before{
+      background: rgba(0,114,59,.72);
+    }
+  }
+}
+
+.gallery-row-wrapper{
+  .col-xs-6:nth-child(even) {
+    .active .galleryThumb{
+      &:before{
+        background: rgba(237, 219, 85, .72);
+      }
+    }
+  }
+}
+
+.gallery-row-wrapper{
+  text-align: center;
+
+  &:last-child{
+    margin-bottom: 50px;
+  }
+
+  .col-xs-6:nth-child(even) {
+    .galleryThumb{
+      &:before{
+        background: rgba(237, 219, 85, 0);
+      }
+      &:hover, &:focus, &:active{
+        cursor: pointer;
+
+        &:before{
+          background: rgba(237, 219, 85, .72);
+        }
+      }
+    }
+  }
+}
+
+/* -- Gallery single --------------- */
+
+.galleryBox{
+  min-height: 272px;
+}
+
+.galleryDisplay{
+  background: rgba(44, 44, 44, 0.85);
+  height: 0;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  @include transition(.4s);
+  width: 100%;
+  z-index: 100;
+
+  .container{
+    position: relative;
+  }
+}
+
+.galleryDisplay.active{
+  height: 100%;
+  margin: 0;
+  opacity: 1;
+  overflow: hidden;
+  @include transition(.4s);
+}
+
+
+.galleryBlock{
+  background: #c6c6c6;
+  display: inline-block;
+  height: 100%;
+  max-height: 720px;
+  max-width: 960px;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+  width: 98%;
+
+  .loader{
+    margin-left: -0.5em;
+    position: absolute;
+    top: 24%;
+    z-index: 10;
+  }
+}
+
+
+.galleryDescription{
+  background: rgba(255,255,255,.95);
+  font: 12px Arial, sans-serif;
+  height: 58px;
+  left: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+
+  p{
+    padding: 0 135px 0 30px;
+  }
+}
+
+.utilityMenu{
+  background: rgba(255,255,255,.95);
+  bottom: 0;
+  height: 58px;
+  left: 0;
+  padding: 0 118px 0 30px;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  z-index: 5;
+}
+
+.pictureDescription{
+  height: 58px;
+  font: 12px Arial, sans-serif;
+  overflow: hidden;
+  padding: 10px 175px 0 40px;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: 60%;
+
+  @include mobile{
+    display: none;
+  }
+
+  p{
+    max-height: 45px;
+    overflow-y: scroll;
+  }
+}
+
+.infoIcon{
+  font-size: 25px;
+  left: 0;
+  position: absolute;
+  top: 15px;
+}
+
+.galleryPage{
+  color: $gray-darkest;
+  height: 57px;
+  @extend %raleway;
+  font-size: 31px;
+  left: 50%;
+  line-height: 1em;
+  margin: 0 0 0 -87px;
+  padding: 9px 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 174px;
+  z-index: 5;
+
+  @include mobile{
+    left: 0;
+    margin: 0;
+    padding: 9px 0 9px 30px;
+    text-align: left;
+  }
+
+  .big{
+    font-size: 50px;
+    line-height: 0.6em;
+  }
+}
+
+.sharing{
+  display: inline-block;
+  height: 58px;
+  position: absolute;
+  right: 58px;
+  top: 0;
+  width: auto;
+  z-index: 5;
+}
+
+.facebookShare{
+  background: white;
+  display: inline-block;
+  height: 58px;
+  overflow: hidden;
+  position: relative;
+  width: 58px;
+
+  &:hover, &:focus, &:active{
+    cursor: pointer;
+
+    .icon-mdk-facebook-rectangle:before{
+      color: darken(#4d70aa, 10);
+    }
+  }
+  .icon-mdk-facebook-rectangle:before{
+    color: #4d70aa;
+    display: inline-block;
+    font-size: 3em;
+    line-height: 1em;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.galleryClose{
+  background: #df7a63;
+  display: block;
+  font-size: 1em;
+  height: 58px;
+  line-height: 4.5em;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 58px;
+  z-index: 5;
+
+  &:hover, &:active{
+    background: darken(#df7a63, 10);
+    text-decoration: none;
+  }
+  .icon-mdk-close:before{
+    color: white;
+    font-size: 1.5em;
+  }
+}
+
+.galleryNavigation{
+  height: 58px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 116px;
+  z-index: 3;
+
+  .prevArrow, .nextArrow{
+    //@extend %raleway-semibold;
+    display: inline-block;
+    font-size: 1em;
+    height: 58px;
+    line-height: 1em;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 58px;
+
+
+    &:hover, &:focus, &:active{
+      background: #e1dfdf;
+      text-decoration: none;
+    }
+
+    &:before{
+      content: " ";
+      display: block;
+      height: 54px;
+      left: 0;
+      position: absolute;
+      top: 2px;
+      width: 1px;
+      z-index: 1;
+    }
+
+    .icon-mdk-arrow-left, .icon-mdk-arrow-right{
+      color: #3b3b3b;
+
+      &:before{
+        font-size: 2em;
+        line-height: 1.5em;
+      }
+    }
+
+  }
+
+  .prevArrow{
+    left: 0;
+  }
+
+  .nextArrow{
+    right: 0;
+  }
+}
+
+.galleryPicture{
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  .wrapp{
+    background: #c6c6c6 url('../img/halftone-pattern.jpg') left top repeat;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  img{
+    width: 100%;
+  }
+}
+
+
+/* *************** LOADER ********** */
+
+.loader{
+  font-size: 90px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 0.8em auto;
+  position: relative;
+  @include animation(loader 1.7s infinite ease);
+}
+
+@include keyframes(loader) {
+  0%{
+    @include transform(rotate(0deg));
+    box-shadow: -0.11em -0.83em 0 -0.4em #338b63, -0.11em -0.83em 0 -0.42em #338b63, -0.11em -0.83em 0 -0.44em #338b63, -0.11em -0.83em 0 -0.46em #338b63, -0.11em -0.83em 0 -0.477em #338b63;
+  }
+
+  5%, 95%{
+    box-shadow: -0.11em -0.83em 0 -0.4em #338b63, -0.11em -0.83em 0 -0.42em #338b63, -0.11em -0.83em 0 -0.44em #338b63, -0.11em -0.83em 0 -0.46em #338b63, -0.11em -0.83em 0 -0.477em #338b63;
+  }
+
+  30%{
+    box-shadow: -0.11em -0.83em 0 -0.4em #338b63, -0.51em -0.66em 0 -0.42em #338b63, -0.75em -0.36em 0 -0.44em #338b63, -0.83em -0.03em 0 -0.46em #338b63, -0.81em 0.21em 0 -0.477em #338b63;
+  }
+
+  55%{
+    box-shadow: -0.11em -0.83em 0 -0.4em #338b63, -0.29em -0.78em 0 -0.42em #338b63, -0.43em -0.72em 0 -0.44em #338b63, -0.52em -0.65em 0 -0.46em #338b63, -0.57em -0.61em 0 -0.477em #338b63;
+  }
+
+  100%{
+    @include transform(rotate(360deg));
+    box-shadow: -0.11em -0.83em 0 -0.4em #338b63, -0.11em -0.83em 0 -0.42em #338b63, -0.11em -0.83em 0 -0.44em #338b63, -0.11em -0.83em 0 -0.46em #338b63, -0.11em -0.83em 0 -0.477em #338b63;
+  }
+}
+
+#errorCargandoImagen{
+  display: inline-block;
+  @extend %raleway;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.02em;
+  max-width: 400px;
+  text-align: center;
+  width: 80%;
+
+  span{
+    display: block;
+    font-style: 130%;
+    font-weight: normal;
+  }
+}

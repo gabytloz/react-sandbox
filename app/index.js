@@ -1,6 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
 import { Route, Router, IndexRoute, browserHistory } from "react-router";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/application.scss";
 
 import App        from "./components/app";
 import Home       from "./components/section/home";

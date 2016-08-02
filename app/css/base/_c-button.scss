@@ -1,0 +1,50 @@
+/* ****************** BUTTON **************** */
+// Included in ./base/_commons
+
+.button{
+  background: $yellow-darker;
+  border: 3px solid $gold;
+  border-width: 0 3px 3px 0;
+  color: $brown;
+  display: inline-block;
+  font: 12px Arial, sans-serif;
+  font-weight: bold;
+  margin: 20px 0 35px;
+  padding: 15px 25px;
+  @include transition(.4s);
+  text-transform: uppercase;
+
+  &:hover, &:focus, &:active{
+    background: lighten($yellow-darker, 10);
+    color: $brown;
+    text-decoration: none;
+  }
+}
+
+.button.hasIcon{
+  @extend .hasIcon;
+  padding: 15px 25px 15px 40px;
+
+  [class^="icon-"], [class*=" icon-"] {
+    left: 10px;
+    position: absolute;
+    top: 12px;
+
+    &:before{
+      left: 0;
+      position: relative;
+      top: 0;
+      z-index: 5;
+    }
+    &:after{
+      @extend .isDecoration;
+      background: white;
+      @include border-radius(50px);
+      height: 18px;
+      left: 1px;
+      top: 1px;
+      width: 18px;
+      z-index: 1;
+    }
+  }
+}
