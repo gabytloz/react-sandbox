@@ -22,7 +22,7 @@ export default class App extends React.Component {
         <Navigation />
       </header>
 
-      { React.cloneElement( this.props.children, this.cleanProps() ) }
+      { /* React.cloneElement( this.props.children, this.cleanProps() ) */ }
       <div id="sections">
         <Home />
         <About />
