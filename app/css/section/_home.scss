@@ -1,1 +1,66 @@
 /* ************ HOME ***************** */
+
+#brandBlock{
+  background: $aqua url(../img/blue-pattern.jpg) repeat;
+  background-attachment: fixed;
+  color: #f2f4f4;
+  height: 100%;
+  font-size: 37px;
+  padding-bottom: 70px;
+  text-align: center;
+  width: 100%;
+
+  @include larger-screen{
+    padding-bottom: 150px;
+  }
+
+  h1{
+    & > span:first-child{
+      background: url(../img/generalxs.png) no-repeat -40px 0;
+      display: block;
+      height: 77px;
+      line-height: 5000em;
+      margin: 0 auto 30px;
+      overflow: hidden;
+      width: 282px;
+
+      @include larger-screen{
+        background-image: url(../img/general-sprite.png);
+        background-position: -104px -12px;
+        height: 167px;
+        margin: 0 auto 100px;
+        width: 608px;
+      }
+    }
+    em{
+      display: block;
+      font-size: 18px;
+      letter-spacing: 0.13em;
+      margin: 0 auto;
+      position: relative;
+      right: -5px;
+      text-align: center;
+      text-transform: lowercase;
+      width: 100%;
+
+      @include larger-screen{
+        font-size: 37px;
+      }
+    }
+  }
+}
+
+#andDecor{
+  background: #f2f4f4;
+  display: inline-block;
+  height: 40px;
+  line-height: 5000em;
+  margin: 0 10px;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 3px;
+
+  @include larger-screen{
+    margin: 0 25px;
+  }
+}

@@ -2,6 +2,7 @@
 // Included in ./base/_setup
 
 body, html{
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -11,4 +12,8 @@ body{
   color: $gray;
   @extend %chivo;
   font-size: 13px;
+}
+
+em{
+  font-style: normal;
 }

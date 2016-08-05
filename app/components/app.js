@@ -18,13 +18,12 @@ export default class App extends React.Component {
 
   render() {
     return <div id="wrapper">
-      <header>
-        <Navigation />
-      </header>
-
       { /* React.cloneElement( this.props.children, this.cleanProps() ) */ }
-      <div id="sections">
+      <div id="pageWrap">
         <Home />
+        <header>
+          <Navigation />
+        </header>
         <About />
         <Services />
         <Portfolio />

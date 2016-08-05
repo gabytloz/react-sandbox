@@ -16,16 +16,65 @@
 /* ********* INCLUDE LAYOUT ***************** */
 
 .container{
-  max-width: 1060px;
+  max-width: 745px;
 }
 
 span.container{
   display: block;
 }
 
-div, section, footer{
+div, section{
   position: relative;
   z-index: 5;
+}
+
+footer{
+  position: relative;
+  z-index: 3;
+}
+
+section{
+  padding: 30px 0;
+
+  @include larger-screen{
+    padding: 100px 0;
+  }
+
+  h1:first-child, h2:first-child, h3:first-child{
+    margin-top: 0;
+  }
+}
+.grayBack{
+  background: $light-gray;
+}
+
+.whiteBack{
+  background: $white url(../img/dirt-pattern.jpg) repeat;
+}
+
+/* Sticky footer */
+* {
+  margin: 0;
+}
+
+#app, #wrapper{
+  height: 100%;
+}
+
+#pageWrap {
+  height: 100%;
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -60px;
+}
+
+#pageWrap:after {
+  content: "";
+  display: block;
+}
+
+footer, #pageWrap:after {
+  height: 60px;
 }
 
 /* ********* INCLUDE MODULES **************** */

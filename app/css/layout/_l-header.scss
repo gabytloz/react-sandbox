@@ -1,4 +1,136 @@
 /* ****************** HEADER **************** */
 
-header{
+#mainMenu{
+  left: 0;
+  margin-top: -40px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+
+  @include larger-screen{
+    margin-top: -50px;
+    padding: 0 0 10px;
+  }
+
+  &:after{
+    @extend .isDecoration;
+    left: 50%;
+
+    @include larger-screen{
+      background-image: url(../img/general-sprite.png);
+      background-position: 0 0;
+      height: 10px;
+      margin: 0 0 0 -640px;
+      width: 1280px;
+
+      @media all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5){
+        background-image: url(../img/general-sprite2x.png);
+        background-size: 1280 × 239;
+      }
+
+    }
+  }
+
+  &.fixed{
+    margin: 0;
+    padding: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+
+    @include larger-screen{
+      padding: 0;
+    }
+
+    ul{
+      padding: 0 0 0 50px;
+
+      @include larger-screen{
+        padding: 0 0 0 140px;
+      }
+    }
+
+    #topBrand{
+      background-image: url(../img/generalxs.png);
+      background-position: 0 0;
+      width: 40px;
+
+      @include larger-screen{
+        background-image: url(../img/general-sprite.png);
+        background-position: 0 -12px;
+        width: 104px;
+
+        @media all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5){
+          background-image: url(../img/general-sprite2x.png);
+          background-size: 1280 × 239;
+        }
+      }
+    }
+  }
+
+  a{
+    color: $gray;
+
+    &:hover, &:focus, &:active{
+      color: $aqua;
+      text-decoration: none;
+    }
+  }
+  .wrap{
+    background: $white;
+    padding: 6px 0;
+    @include transition(.6s);
+  }
+
+  ul{
+    font-size: 13px;
+    padding: 0;
+    text-align: center;
+    @include transition(.6s);
+
+    @include larger-screen{
+      font-size: 18px;
+    }
+  }
+
+  li{
+    display: inline-block;
+    margin: 0 0 0 23px;
+    padding: 0;
+
+    @include larger-screen{
+      margin: 0 0 0 70px;
+    }
+
+    &:first-child{
+      margin-left: 0;
+    }
+
+    a{
+      display: block;
+      padding: 0;
+
+      @include larger-screen{
+        padding: 5px 0 0;
+      }
+    }
+  }
+}
+
+#topBrand{
+  display: inline-block;
+  height: 11px;
+  left: 15px;
+  line-height: 5000em;
+  overflow: hidden;
+  position: absolute;
+  top: 3px;
+  @include transition(.6s);
+  width: 0;
+
+  @include larger-screen{
+   height: 29px;
+  }
+
 }

@@ -1,27 +1,45 @@
 /* ****************** BUTTON **************** */
 // Included in ./base/_commons
 
-.button{
-  background: #67241c;
-  border: none;
-  @include border-radius(0);
-  color: #ffffff;
-  cursor: pointer;
-  display: block;
-  font-size: 19px;
-  letter-spacing: .06em;
-  margin: 0;
-  padding: 15px 2%;
+.buttonStyle{
+  color: $white;
+  display: inline-block;
+  font-size: 26px;
+  line-height: 1em;
+  margin-bottom: 15px;
+  min-height: 55px;
+  min-width: 250px;
+  padding: 13px 13px 8px 13px;
+  position: relative;
   text-align: center;
-  text-transform: uppercase;
-  width: 98%;
 
   &:hover, &:focus, &:active{
-    background: lighten(#67241c, 5);
+    color: $white;
+    text-decoration: none;
   }
 
-  &:visited, &:visited:focus, &:visited:active, &:visited:hover{
-    color: white;
-    text-decoration: none;
+  &:after{
+    content: " >";
+    display: inline-block;
+    margin: 0 5px 0 15px;
+  }
+}
+
+.aquaButton{
+  @extend .buttonStyle;
+  background: $aqua;
+
+  &:hover, &:focus, &:active{
+    background: lighten($aqua, 10);
+  }
+
+}
+
+.blueButton{
+  @extend .buttonStyle;
+  background: $blue;
+
+  &:hover, &:focus, &:active{
+    background: lighten($blue, 10);
   }
 }

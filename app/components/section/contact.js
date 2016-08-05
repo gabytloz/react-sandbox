@@ -50,10 +50,10 @@ export default class Contact extends React.Component {
   render() {
     const { name, validEmail, validName, validMessage, firstLoad } = this.state;
 
-    return <div id="contactComponent">
+    return <section id="contactComponent" className="grayBack">
       <h1>Contact me</h1>
 
       { name ? <p id="messageSent"><em>Thanks for writting { name }</em>,<br /> Your message as been sent, I'll contact you as soon as I can.</p> : <ContactForm sendEmail={ this.sendEmail } validateEmail={ this.validateEmail } validateName={ this.validateName } validateMessage={ this.validateMessage } validEmail={ validEmail } validName={ validName } validMessage={ validMessage } firstLoad={ firstLoad } /> }
-    </div>
+    </section>
   }
 }

@@ -3,7 +3,6 @@
 h1, h2, h3, h4{
   @extend %chivo;
   line-height: 1em;
-}
 
   a, a:link{
     color: black;
@@ -13,6 +12,8 @@ h1, h2, h3, h4{
       color: lighten(black,20);
     }
   }
+}
+
 
 h2{
   font-size: 102px;

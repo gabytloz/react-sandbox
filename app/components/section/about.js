@@ -6,7 +6,7 @@ export default class About extends React.Component {
     }
 
     render() {
-      return <section id="about">
+      return <section id="about" className="whiteBack">
         <div className="container">
           <h3>Hello there!</h3>
           <div className="row">
