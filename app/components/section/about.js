@@ -11,7 +11,7 @@ export default class About extends React.Component {
           <h3>Hello there!</h3>
           <div className="row">
             <div className="col-xs-12 col-sm-5">
-              <h2>My name is <em>Gabriela Vargas</em></h2>
+              <h2>My name is <em>Gabriela <span>Vargas</span></em></h2>
             </div>
             <div className="col-xs-12 col-sm-7">
                 <p>Since I was 16 years old <em>I liked</em> the idea of <em>creating</em> things with the help of <em>html</em> and <em>css</em>; and I still do.</p>
