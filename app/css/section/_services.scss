@@ -1,0 +1,57 @@
+/* ****************** SERVICES ************** */
+#services{
+  h3{
+    color: $aqua;
+    font-size: 56px;
+    margin: 0 0 -20px -135px;
+    padding: 35px 0 30px 131px;
+    position: relative;
+    text-transform: lowercase;
+
+    &:before{
+      @extend .isDecoration;
+      background: white;
+      @include border-radius(100px);
+      height: 115px;
+      left: 0;
+      top: 0;
+      width: 115px;
+      z-index: 1;
+    }
+    &:after{
+      @extend .isDecoration;
+      color: $gray;
+      content: "<3";
+      font: 35px verdana, sans-serif;
+      font-weight: bold;
+      left: 31px;
+      top: 35px;
+      z-index: 5;
+    }
+  }
+  ul{
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+  }
+  li{
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    line-height: 1.3em;
+    padding: 0 0 0 145px;
+
+    &:first-child{
+      h3{
+        &:after{
+          content: "</>";
+          left: 22px;
+          letter-spacing: -0.1em;
+          top: 33px;
+        }
+      }
+    }
+  }
+  .blueButton{
+    margin: 25px 23px 15px 0;
+  }
+}

@@ -30,6 +30,11 @@
         height: 167px;
         margin: 0 auto 100px;
         width: 608px;
+
+        @media all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5){
+          background-image: url(../img/general-sprite2x.png);
+          background-size: 1280px 239px;
+        }
       }
     }
     em{
