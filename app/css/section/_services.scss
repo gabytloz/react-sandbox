@@ -1,32 +1,56 @@
 /* ****************** SERVICES ************** */
 #services{
+  h2{
+    font-size: 50px;
+
+    @include larger-screen{
+      font-size: 56px;
+    }
+  }
   h3{
     color: $aqua;
-    font-size: 56px;
-    margin: 0 0 -20px -135px;
-    padding: 35px 0 30px 131px;
+    font-size: 27px;
+    margin: 0 0 20px;
+    padding: 17px 0 10px 70px;
     position: relative;
     text-transform: lowercase;
+
+    @include larger-screen{
+      font-size: 56px;
+      margin: 0 0 -20px -135px;
+      padding: 35px 0 30px 131px;
+    }
 
     &:before{
       @extend .isDecoration;
       background: white;
       @include border-radius(100px);
-      height: 115px;
+      height: 55px;
       left: 0;
       top: 0;
-      width: 115px;
+      width: 55px;
       z-index: 1;
+
+      @include larger-screen{
+        height: 115px;
+        width: 115px;
+      }
     }
     &:after{
       @extend .isDecoration;
       color: $gray;
       content: "<3";
-      font: 35px verdana, sans-serif;
+      font: 20px verdana, sans-serif;
       font-weight: bold;
-      left: 31px;
-      top: 35px;
+      left: 12px;
+      top: 14px;
       z-index: 5;
+
+      @include larger-screen{
+        font-size: 35px;
+        left: 31px;
+        top: 35px;
+      }
     }
   }
   ul{
@@ -38,15 +62,25 @@
     font-size: 20px;
     letter-spacing: 0.05em;
     line-height: 1.3em;
-    padding: 0 0 0 145px;
+    padding: 0;
+
+    @include larger-screen{
+      padding: 0 0 0 145px;
+    }
 
     &:first-child{
       h3{
         &:after{
           content: "</>";
-          left: 22px;
-          letter-spacing: -0.1em;
-          top: 33px;
+          left: 9px;
+          letter-spacing: -0.18em;
+          top: 14px;
+
+          @include larger-screen{
+            left: 22px;
+            letter-spacing: -0.1em;
+            top: 33px;
+          }
         }
       }
     }
