@@ -11,7 +11,11 @@ body{
   background: #fcfcfc url(../img/dirt-pattern.jpg) repeat;
   color: $gray;
   @extend %chivo;
-  font-size: 13px;
+  font-size: 15px;
+
+  @include larger-screen{
+    font-size: 13px;
+  }
 }
 
 em{

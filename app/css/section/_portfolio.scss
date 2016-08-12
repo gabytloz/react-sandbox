@@ -190,6 +190,18 @@
 
 .credit{
   font-size: 11px;
+  margin: 20px 0 15px;
+
+  a{
+    color: $gray;
+    @extend %chivoblack;
+    font-size: 88%;
+
+    &:hover, &:focus, &:active{
+      color: lighten($gray, 10);
+      text-decoration: none;
+    }
+  }
 }
 
 

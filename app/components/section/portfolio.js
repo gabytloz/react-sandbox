@@ -33,7 +33,7 @@ export default class Portfolio extends React.Component {
                   <ul className="contributionList">
                     <li>layout coding</li>
                   </ul>
-                  <p>Aside from coding the website,  this design features numerous css animations that activate when the elemeclass="trigger" href="javascript:void(0)"nt is on screen. This required a combination of css and javascript to activate the animations at the proper time. </p>
+                  <p>Aside from coding the website,  this design features numerous css animations that activate when the element is on screen. This required a combination of css and javascript to activate the animations at the proper time. </p>
                   <ul className="skillsList">
                     <li>html</li><li>
                       css</li><li>
