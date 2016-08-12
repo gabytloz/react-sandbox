@@ -1,0 +1,238 @@
+/* ****************** PORTFOLIO ************** */
+
+/* -------- Generic carousel -------- */
+
+.carousel-control{
+  height: 100%;
+  line-height: 5000em;
+  opacity: 1;
+  overflow: hidden;
+  width: 85px;
+  z-index: 20;
+
+  .glyphicon{
+    display: none;
+  }
+  &:hover, &:active, &:focus{
+    opacity: 1;
+
+    &:before{ // Decoration - circle
+      background: lighten($blue, 10);
+    }
+  }
+
+  &:before{ // Decoration - circle
+    @extend .isDecoration;
+    background: $blue;
+    @include border-radius(50px);
+    height: 60px;
+    left: 50%;
+    margin: 0 0 0 -30px;
+    top: 35px;
+    width: 60px;
+    z-index: 1;
+  }
+
+  &:after{
+    @extend .isDecoration;
+    content: "<";
+    left: 50%;
+    margin: 0 0 0 -10px;
+    text-shadow: none;
+    top: 55px;
+    width: 20px;
+    z-index: 5;
+  }
+
+  &.left, &.right{
+    background: transparent;
+    text-align: center;
+  }
+
+  &.right{
+    &:after{
+      content: ">";
+    }
+  }
+}
+
+.carousel-indicators{
+  bottom: auto;
+  height: 15px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  top: 140px;
+  width: 100%;
+  z-index: 20;
+
+  li{
+    background: lighten($blue, 8);
+    border: none;
+    @include box-shadow(0 0 3px rgba(76, 80, 82, 0.3) inset);
+    height: 15px;
+    margin: 0;
+    width: 15px;
+  }
+
+  .active{
+    background: $blue;
+    height: 15px;
+    width: 15px;
+  }
+}
+
+/* -------- Portfolio text -------- */
+
+#portfolio{
+  h3, h4{
+    color: $aqua;
+    text-transform: lowercase;
+
+    em{
+      @extend %chivoblack;
+      font-size: 88%;
+    }
+  }
+
+  h3{
+    font-size: 33px;
+    margin-top: 20px;
+  }
+
+  h4{
+    font-size: 27px;
+    margin: 0 0 10px;
+  }
+
+  .col-sm-5{
+    h4{
+      font-size: 22px;
+      margin: 38px 0 10px;
+    }
+  }
+
+  p{
+    line-height: 1.6em;
+  }
+}
+
+#portfolioSlider{
+  .text-right{
+    @include mobile{
+      margin-top: 30px;
+      text-align: left;
+    }
+  }
+
+  .blueButton{
+    font-size: 20px;
+    margin: 38px 0 15px;
+    min-height: 45px;
+    min-width: 205px;
+  }
+}
+
+.visitWeb{
+  background: $blue;
+  bottom: 0;
+  color: $white;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1em;
+  padding: 3px 5px;
+  position: absolute;
+  right: 90px;
+  text-transform: lowercase;
+
+  @include larger-screen{
+    font-size: 30px;
+    bottom: 65px;
+    padding: 6px 10px;
+    right: 187px;
+  }
+}
+
+.tagListStyle{
+  @include border-radius(5px);
+  color: white;
+  display: inline-block;
+  font: 15px Verdana, sans-serif;
+  font-weight: bold;
+  margin: 0 0 10px 10px;
+  padding: 5px 10px;
+
+  &:first-child{
+    margin-left: 0;
+  }
+
+}
+
+.contributionList{
+  @extend .unstyledList;
+
+  li{
+    @extend .tagListStyle;
+    border: 3px solid $blue;
+    color: $blue;
+  }
+}
+
+.skillsList{
+  @extend .unstyledList;
+
+  li{
+    @extend .tagListStyle;
+    border: 3px solid $aqua;
+    color: $aqua;
+  }
+}
+
+.credit{
+  font-size: 11px;
+}
+
+
+/* -------- Portfolio images -------- */
+
+.portfolioImg{
+  background: url("../img/portfolioxs.png") 0 -375px no-repeat;
+  display: block;
+  line-height: 5000em;
+  margin: 0 auto 25px;
+  opacity: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.laptop, .devices{
+  width: 270px;
+}
+
+.laptop{
+  background-position: 0 -375px;
+  height: 131px;
+}
+
+.devices{
+  background-position: 0 -250px;
+  height: 125px;
+
+  .visitWeb{
+    @include larger-screen{
+      bottom: 74px;
+      right: 176px;
+    }
+  }
+}
+
+#mdk-img{
+  background-position: 0 -123px;
+}
+
+#sociable-img{
+  background-position: 0 -507px;
+}
+#adell-img{
+  background-position: 0 0;
+}
