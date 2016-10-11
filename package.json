@@ -46,7 +46,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "animated-scrollto": "^1.1.0",
     "babel-polyfill": "^6.6.1",
     "babel-preset-react": "^6.5.0",
     "babel-runtime": "^6.6.1",
