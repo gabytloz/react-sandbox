@@ -15,7 +15,11 @@ export default class App extends React.Component {
   }
 
   cleanProps() {
-      return  Object.assign({}, this.props, { children: this.props.children.props.children } );
+    return  Object.assign({}, this.props, { children: this.props.children.props.children } );
+  }
+
+  fixedMenu(current, target) {
+    return current >= target
   }
 
   componentDidMount() {
@@ -28,6 +32,18 @@ export default class App extends React.Component {
     } else {
       scrollTo( document.body, 0, 0 ); // No need for smooth scrolling here
     }
+
+    const firstBlockHeight = document.getElementById( "about" ).offsetTop - document.getElementById( "brandBlock" ).offsetTop;
+    var   windowScrolled = firstBlockHeight - window.scrollY;
+
+    if( this.fixedMenu(windowScrolled, firstBlockHeight)){
+     console.log("a "+ windowScrolled);
+     console.log("b "+ firstBlockHeight);
+    }
+    else{
+     console.log("bbb");
+    }
+
   }
 
   render() {

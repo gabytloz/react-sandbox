@@ -10,6 +10,7 @@
 
   @include larger-screen{
     margin-top: -50px;
+    overflow: hidden;
     padding: 0 0 10px;
   }
 
@@ -95,7 +96,7 @@
 
   li{
     display: inline-block;
-    margin: 0 0 0 23px;
+    margin: 0 0 0 12px;
     padding: 0;
 
     @include larger-screen{

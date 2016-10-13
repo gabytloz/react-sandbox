@@ -10,43 +10,69 @@
   width: 85px;
   z-index: 20;
 
-  .glyphicon{
-    display: none;
+  @include desktop{
+    width: 15%;
   }
+
   &:hover, &:active, &:focus{
     opacity: 1;
 
     &:before{ // Decoration - circle
       background: lighten($blue, 10);
+      @include box-shadow(rgba(76, 80, 82, 0.3) 2px 3px 4px inset);
     }
+  }
+
+  .glyphicon{
+    display: none;
   }
 
   &:before{ // Decoration - circle
     @extend .isDecoration;
     background: $blue;
-    @include border-radius(50px);
+    @include border-radius(70px);
     height: 60px;
     left: 50%;
     margin: 0 0 0 -30px;
     top: 35px;
     width: 60px;
     z-index: 1;
+
+    @include desktop{
+      height: 120px;
+      margin: 0 0 0 -60px;
+      top: 145px;
+      width: 120px;
+    }
   }
 
   &:after{
     @extend .isDecoration;
     content: "<";
     left: 50%;
-    margin: 0 0 0 -10px;
+    margin: 0 0 0 -20px;
     text-shadow: none;
     top: 55px;
-    width: 20px;
+    width: 40px;
     z-index: 5;
+
+    @include desktop{
+      font-size: 62px;
+      top: 170px;
+    }
   }
 
   &.left, &.right{
     background: transparent;
     text-align: center;
+
+
+    &:after{
+      @include desktop{
+        font-size: 62px;
+        top: 170px;
+      }
+    }
   }
 
   &.right{
@@ -65,6 +91,10 @@
   top: 140px;
   width: 100%;
   z-index: 20;
+
+  @include desktop{
+    top: 465px;
+  }
 
   li{
     background: lighten($blue, 8);
@@ -119,7 +149,7 @@
 
 #portfolioSlider{
   .text-right{
-    @include mobile{
+    @media (max-width: 767px){
       margin-top: 30px;
       text-align: left;
     }
@@ -145,11 +175,11 @@
   right: 90px;
   text-transform: lowercase;
 
-  @include larger-screen{
+  @include desktop{
+    bottom: 68px;
     font-size: 30px;
-    bottom: 65px;
     padding: 6px 10px;
-    right: 187px;
+    right: 202px;
   }
 }
 
@@ -159,11 +189,11 @@
   display: inline-block;
   font: 15px Verdana, sans-serif;
   font-weight: bold;
-  margin: 0 0 10px 10px;
+  margin: 0 10px 10px 0;
   padding: 5px 10px;
 
-  &:first-child{
-    margin-left: 0;
+  &:last-child{
+    margin-right: 0;
   }
 
 }
@@ -176,6 +206,10 @@
     border: 3px solid $blue;
     color: $blue;
   }
+}
+
+.tagListStyle + p, .contributionList + p{
+  text-indent: 0;
 }
 
 .skillsList{
@@ -191,6 +225,7 @@
 .credit{
   font-size: 11px;
   margin: 20px 0 15px;
+  text-indent: 0;
 
   a{
     color: $gray;
@@ -198,7 +233,7 @@
     font-size: 88%;
 
     &:hover, &:focus, &:active{
-      color: lighten($gray, 10);
+      color: $blue;
       text-decoration: none;
     }
   }
@@ -215,36 +250,78 @@
   opacity: 1;
   overflow: hidden;
   position: relative;
+
+  @include desktop{
+    background-image: url("../img/portfolio.png");
+  }
 }
 
 .laptop, .devices{
   width: 270px;
+
+  @include desktop{
+    width: 980px;
+  }
 }
 
 .laptop{
-  background-position: 0 -375px;
+  background-position: 9px -375px;
   height: 131px;
+
+  @include desktop{
+    height: 477px;
+  }
 }
 
 .devices{
   background-position: 0 -250px;
   height: 125px;
 
+  @include desktop{
+    height: 477px;
+  }
+
   .visitWeb{
-    @include larger-screen{
-      bottom: 74px;
-      right: 176px;
+    @include desktop{
+      bottom: 68px;
+      right: 226px;
     }
+  }
+}
+
+#cr-img{
+  @include desktop{
+    background-position: 1px -1350px;
+    height: 458px;
+  }
+}
+
+#evo-img{
+  @include desktop{
+    background-position: 0 -900px;
+    height: 445px;
   }
 }
 
 #mdk-img{
   background-position: 0 -123px;
+
+  @include desktop{
+    background-position: 1px -450px;
+    height: 450px;
+  }
 }
 
 #sociable-img{
-  background-position: 0 -507px;
+  background-position: 9px -507px;
+
+  @include desktop{
+    background-position: 0 -1825px;
+  }
 }
 #adell-img{
   background-position: 0 0;
+  @include desktop{
+    height: 450px;
+  }
 }

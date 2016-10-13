@@ -1,1 +1,128 @@
 /* ****************** CONTACT ************** */
+#contact{
+  form{
+    label:first-child{
+      margin-top: 0;
+    }
+  }
+
+  label{
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 10px;
+  }
+
+  input, textarea{
+    @include box-shadow(rgba(76, 80, 82, 0) 1px 1px 2px inset);
+    font-size: 16px;
+    padding: 3px 7px;
+    @include transition(.4s);
+    width: 100%;
+  }
+
+  input, textarea, select {
+    appearance:         none;
+      -webkit-appearance: none;
+      -moz-appearance:    none;
+    border: none;
+    display: block;
+    letter-spacing: 0.03em;
+
+    &:focus{
+      @include box-shadow(rgba(76, 80, 82, 0.2) 2px 2px 1px inset);
+    }
+  }
+
+  input{
+    @include larger-screen{
+      font-size: 20px;
+    }
+  }
+
+  textarea{
+    height: 180px;
+
+    @include larger-screen{
+      font-size: 16px;
+    }
+
+    &::-webkit-input-placeholder{
+      font-size: 20px;
+    }
+    &:-moz-placeholder{
+      font-size: 20px;
+    }
+    &::-moz-placeholder{
+      font-size: 20px;
+    }
+    &:-ms-input-placeholder{
+      font-size: 20px;
+    }
+  }
+
+  input[type=button]{
+    @extend .blueButton;
+    margin-top: 35px;
+    padding-top: 8px;
+  }
+
+  p{
+    text-indent: 0;
+  }
+}
+
+#selectWrapper{
+  height: 35px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &:before{
+    @extend .isDecoration;
+    background: $blue;
+    height: 35px;
+    right: 0;
+    top: 0;
+    width: 35px;
+    z-index: 3;
+  }
+
+  &:after{
+    @extend .isDecoration;
+    color: white;
+    content: "\25BC";
+    font-size: 16px;
+    right: 8px;
+    top: 9px;
+    z-index: 5;
+  }
+  select{
+    border: none;
+    @include border-radius(0);
+    font-size: 16px;
+    height: 100%;
+    left: 0;
+    padding: 3px 7px;
+    position: relative;
+    top: 0;
+    width: 130%;
+    z-index: 1;
+
+    @include larger-screen{
+      font-size: 20px;
+    }
+  }
+  option{
+    font-size: 12px;
+
+    @include larger-screen{
+      font-size: 14px;
+    }
+  }
+}
+
+.error{
+  color: $red;
+}
