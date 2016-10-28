@@ -7,7 +7,7 @@ export default class Navigation extends React.Component {
     }
 
     render() {
-      return <nav id="mainMenu">
+      return <nav id="mainMenu" className={this.props.isMenuClassActive ? this.props.menuClass: ''}>
           <div className="wrap">
             <div className="container">
               <a id="topBrand" href="welcome" title="Return to top">VAGUI - Go to top<span className="icon"></span>

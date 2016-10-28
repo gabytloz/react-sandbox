@@ -1,4 +1,4 @@
-import React from "react";
+import React,{PropTypes} from "react";
 import Navigation from "./modules/navigation";
 
 import Home       from "./section/home";
@@ -12,6 +12,11 @@ import { scrollTo } from "../lib/smooth-scrolling";
 export default class App extends React.Component {
   constructor(props) {
     super(props)
+    this.navigationStyle = this.navigationStyle.bind(this);
+
+    this.state = {
+      menuClassActive: false,
+    }
   }
 
   cleanProps() {
@@ -20,6 +25,25 @@ export default class App extends React.Component {
 
   fixedMenu(current, target) {
     return current >= target
+  }
+
+  navigationStyle(){
+    const firstBlockHeight = document.getElementById( "about" ).offsetTop - document.getElementById( "brandBlock" ).offsetTop;
+    var   mainMenuHeight   = document.getElementById( "about" ).offsetTop - document.getElementById( "mainMenu" ).offsetTop;
+    var   windowScrolled   = window.scrollY;
+
+    if( this.fixedMenu(windowScrolled, firstBlockHeight)){
+      this.setState({
+        menuClassActive: true
+      })
+      console.log("active - windowScrolled:" + windowScrolled + "firstBlockHeight:" + firstBlockHeight + "mainMenuHeight:" + mainMenuHeight)
+    }
+    else{
+      this.setState({
+        menuClassActive: false
+      })
+      console.log("inactive - windowScrolled:" + windowScrolled + "firstBlockHeight:" + firstBlockHeight + "mainMenuHeight:" + mainMenuHeight)
+    }
   }
 
   componentDidMount() {
@@ -33,17 +57,13 @@ export default class App extends React.Component {
       scrollTo( document.body, 0, 0 ); // No need for smooth scrolling here
     }
 
-    const firstBlockHeight = document.getElementById( "about" ).offsetTop - document.getElementById( "brandBlock" ).offsetTop;
-    var   windowScrolled = firstBlockHeight - window.scrollY;
+    // Listen scroll to see if navigation should be fixed on top
+    window.addEventListener('scroll', this.navigationStyle);
+  }
 
-    if( this.fixedMenu(windowScrolled, firstBlockHeight)){
-     console.log("a "+ windowScrolled);
-     console.log("b "+ firstBlockHeight);
-    }
-    else{
-     console.log("bbb");
-    }
-
+  componentWillUnmount(){
+    // Remove listener for navigation
+    window.removeEventListener('scroll');
   }
 
   render() {
@@ -52,7 +72,7 @@ export default class App extends React.Component {
       <div id="pageWrap">
         <Home />
         <header>
-          <Navigation />
+          <Navigation menuClass={this.props.menuClass} isMenuClassActive={this.state.menuClassActive} />
         </header>
         <About />
         <Services />
@@ -64,4 +84,12 @@ export default class App extends React.Component {
       </footer>
     </div>
   }
+}
+
+App.propTypes = {
+  menuClass: React.PropTypes.string,
+}
+
+App.defaultProps = {
+  menuClass: 'fixed',
 }
