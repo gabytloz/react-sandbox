@@ -37,12 +37,11 @@ export default class ContactForm extends React.Component {
         <select id="service" ref="serviceInput">
           <option value="-"></option>
           <option value="coding">Coding - You already have a design</option>
-          <option value="design">Web design - You need just the image of the website</option>
+          <option value="design">Web design - You just need the image of the website</option>
           <option value="design and coding">Web design and coding</option>
           <option value="other or undecided">Other / Undecided</option>
         </select>
       </div>
-
 
       <label className="hidden">Your message</label>
       <textarea id="message" ref="messageInput" placeholder="So what can you tell me about the project?" onChange={ () => validateMessage( this.refs.messageInput ) }></textarea>
