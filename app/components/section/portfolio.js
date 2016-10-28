@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from 'react-bootstrap';
+import {Link} from "react-router";
 
 export default class Portfolio extends React.Component {
     constructor(props) {
@@ -25,7 +26,7 @@ export default class Portfolio extends React.Component {
                   <h4>The <em>problem</em></h4>
                   <p>The client didn’t have a website, but since it’s financed mostly by donations, the main priority became to make the donation data and tools easy to find and use.</p>
                   <p>The website links to this information in key parts of the site to make it available.</p>
-                  <a href="contact" title="Contact me" className="blueButton">Contact me</a>
+                  <Link to="/contact" className="blueButton">Contact me</Link>
 
                 </div>
                 <div className="col-xs-12 col-sm-6 col-sm-offset-1 text-right">
@@ -60,8 +61,7 @@ export default class Portfolio extends React.Component {
                   <p>The company offered their services to american and mexican companies, but they didn't have their information available online.</p>
                   <p>Since the solutions they specialise on are fairly delicate processes, the confidence in the company was negatively affected for the lack of online presence. Their website now features a bilingual site where they can give the background of the company and explain their services.</p>
 
-                  <a href="contact" title="Contact me" className="blueButton">Contact me</a>
-
+                  <Link to="/contact" className="blueButton">Contact me</Link>
                 </div>
                 <div className="col-xs-12 col-sm-6 col-sm-offset-1 text-right">
                   <h4>My <em>contribution</em></h4>
@@ -95,8 +95,8 @@ export default class Portfolio extends React.Component {
                   <h4>The <em>problem</em></h4>
                   <p>The organisation entrusts each branch with marketing and advertising duties. This branch was interested in adding a website to their online presence, that at the time only comprehended a facebook page.</p>
                   <p>In this new website the company can provide their clients with information about the sport and the school, since this branch has other local competitors the webpage has a non-obtrusive message that encourages the client to contact the owners for more information. Additionally, it contains a gallery with exclusive pictures of the students that can be shared in facebook by their relatives and friends, increasing the web traffic and extending the reach of the brand.</p>
-                  <a href="contact" title="Contact me" className="blueButton">Contact me</a>
 
+                  <Link to="/contact" className="blueButton">Contact me</Link>
                 </div>
                 <div className="col-xs-12 col-sm-6 col-sm-offset-1 text-right">
                   <h4>My <em>contribution</em></h4>
@@ -132,8 +132,8 @@ export default class Portfolio extends React.Component {
                   <h4>The <em>problem</em></h4>
                   <p>The project needed to automatise the development of the minisites as much as possible to become a viable business. </p>
                   <p>This required the research of technologies and tools that made the required functionalities like tools for downloading big files, and gallery that was could be created with the contents of a folder an therefore could be updated easily for each client.</p>
-                  <a href="contact" title="Contact me" className="blueButton">Contact me</a>
 
+                  <Link to="/contact" className="blueButton">Contact me</Link>
                 </div>
                 <div className="col-xs-12 col-sm-6 col-sm-offset-1 text-right">
                   <h4>My <em>contribution</em></h4>
@@ -166,8 +166,8 @@ export default class Portfolio extends React.Component {
                   <h4>The <em>problem</em></h4>
                   <p>The inspiration source had a website with an old design developed with flash, that didn't match the kind of clientele he had. The website had a black background and a limited colour palette, and the information was hard to access. </p>
                   <p>In this inspirational website the  information was reordered (currently the text is just a placeholder), the colour palette was extended and the stock images where given appealing rotation effects to replace the animations from the old website.</p>
-                  <a href="contact" title="Contact me" className="blueButton">Contact me</a>
 
+                  <Link to="/contact" className="blueButton">Contact me</Link>
                 </div>
                 <div className="col-xs-12 col-sm-6 col-sm-offset-1 text-right">
                   <h4>My <em>contribution</em></h4>
